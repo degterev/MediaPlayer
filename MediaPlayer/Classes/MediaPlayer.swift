@@ -55,7 +55,7 @@ public enum MediaPlayerLayerResizeMode {
     case ResizeAspect
     case ResizeAspectFill
     
-    var videoGravity: String {
+    public var videoGravity: String {
         switch self {
         case .Resize:
             return AVLayerVideoGravityResize
@@ -66,7 +66,7 @@ public enum MediaPlayerLayerResizeMode {
         }
     }
     
-    init(videoGravity: String) {
+    public init(videoGravity: String) {
         switch videoGravity {
         case AVLayerVideoGravityResize:
             self = .Resize
