@@ -14,7 +14,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		9288218FFD54F6ADFD02A65C /* Pods_MediaPlayer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC1C2AEE6F6420A8263793E /* Pods_MediaPlayer_Tests.framework */; };
-		BC759AA21CF5AFB600BF4D4D /* MediaPlayer.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = BC759AA11CF5AFB600BF4D4D /* MediaPlayer.podspec.json */; };
+		BC759AA61CF5B28900BF4D4D /* MediaPlayer.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = BC759AA51CF5B28900BF4D4D /* MediaPlayer.podspec.json */; };
 		EDCF5A478A40DBE05C37A3EB /* Pods_MediaPlayer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB12B9F4E7E298ABBFD03FF2 /* Pods_MediaPlayer_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +45,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6FCC626DC9C083293F8C6475 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		BC759AA11CF5AFB600BF4D4D /* MediaPlayer.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MediaPlayer.podspec.json; sourceTree = "<group>"; };
+		BC759AA51CF5B28900BF4D4D /* MediaPlayer.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MediaPlayer.podspec.json; path = ../MediaPlayer.podspec.json; sourceTree = "<group>"; };
 		E3AC09DD8C3A31407056FED3 /* Pods-MediaPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaPlayer_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediaPlayer_Example/Pods-MediaPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		FB12B9F4E7E298ABBFD03FF2 /* Pods_MediaPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -133,7 +133,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				BC759AA11CF5AFB600BF4D4D /* MediaPlayer.podspec.json */,
+				BC759AA51CF5B28900BF4D4D /* MediaPlayer.podspec.json */,
 				137056ACDFC218A0F98949F0 /* README.md */,
 				6FCC626DC9C083293F8C6475 /* LICENSE */,
 			);
@@ -248,7 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				BC759AA21CF5AFB600BF4D4D /* MediaPlayer.podspec.json in Resources */,
+				BC759AA61CF5B28900BF4D4D /* MediaPlayer.podspec.json in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
