@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MediaPlayer_Example' do
+  pod 'MediaPlayer', :path => '../'
+
+  target 'MediaPlayer_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

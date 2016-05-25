@@ -1,0 +1,22 @@
+{
+    "name": "Player",
+    "version": "0.1.0",
+    "summary": "Media player written in Swift for media playing and streaming in iOS, OS X or tvOS apps",
+    "homepage": "https://github.com/TheMindStudios/MediaPlayer",
+    "license": "MIT",
+    "social_media_url": "http://twitter.com/TheMindStudios",
+    "authors": {
+        "Max Mashkov": "max@themindstudios.com"
+    },
+    "source": {
+        "git": "https://github.com/TheMindStudios/MediaPlayer.git",
+        "tag": "0.1.0"
+    },
+    "platforms": {
+        "ios": "8.0",
+        "osx": "10.9",
+        "tvos": "9.0"
+    },
+    "source_files": "MediaPlayer/Classes/**/*",
+    "frameworks": "AVFoundation"
+}

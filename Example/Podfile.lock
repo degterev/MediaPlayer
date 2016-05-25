@@ -1,0 +1,16 @@
+PODS:
+  - MediaPlayer (0.1.0)
+
+DEPENDENCIES:
+  - MediaPlayer (from `../`)
+
+EXTERNAL SOURCES:
+  MediaPlayer:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MediaPlayer: 59b58d66b7e81192fcdc9c03bd763d468005e365
+
+PODFILE CHECKSUM: 58fc2c758e5487290c9f9ec8f0f795f11995d324
+
+COCOAPODS: 1.0.0
