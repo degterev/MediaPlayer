@@ -1,5 +1,5 @@
 {
-    "name": "Player",
+    "name": "MediaPlayer",
     "version": "0.1.0",
     "summary": "Media player written in Swift for media playing and streaming in iOS, OS X or tvOS apps",
     "homepage": "https://github.com/TheMindStudios/MediaPlayer",
