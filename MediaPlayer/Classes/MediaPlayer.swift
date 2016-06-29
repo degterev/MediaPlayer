@@ -332,9 +332,7 @@ public extension MediaPlayer {
             }
             
         case (.Some(PlayerRateKey), &PlayerObserverContext):
-            
-            break
-//            playbackState = player.rate > 0 ? .Playing : .Paused
+            playbackState = player.rate > 0 ? .Playing : .Paused
             
         case (.Some(PlayerItemKeepUp), &PlayerItemObserverContext):
             
