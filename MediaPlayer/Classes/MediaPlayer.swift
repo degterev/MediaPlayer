@@ -9,6 +9,7 @@
 import Foundation
 import AVFoundation
 import CoreMedia
+import AVKit
 
 private let kDefaultUpdateTimeInterval = 0.1
 
@@ -151,6 +152,17 @@ public class MediaPlayer: NSObject {
         }
         set {
             player.volume = newValue
+        }
+    }
+    
+    public var actionAtItemEnd: AVPlayerActionAtItemEnd {
+        
+        get {
+            return player.actionAtItemEnd
+        }
+        
+        set {
+            player.actionAtItemEnd = actionAtItemEnd
         }
     }
     
@@ -315,6 +327,10 @@ public class MediaPlayer: NSObject {
     
     public func setupPlayerLayer(playerLayer: AVPlayerLayer) {
         playerLayer.player = player
+    }
+    
+    public func setAVPlayerViewControllerPlayer(playerViewController: AVPlayerViewController) {
+        playerViewController.player = player
     }
 }
 
