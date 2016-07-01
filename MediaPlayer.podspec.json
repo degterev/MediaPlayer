@@ -18,5 +18,5 @@
         "tvos": "9.0"
     },
     "source_files": "MediaPlayer/Classes/**/*",
-    "frameworks": "AVFoundation", "AVKit"
+    "frameworks": "AVFoundation, AVKit"
 }
