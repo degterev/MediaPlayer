@@ -355,9 +355,11 @@ public extension MediaPlayer {
             
         case (.Some(PlayerItemKeepUp), &PlayerItemObserverContext):
             
-            bufferingState = .Ready
-            if playbackState == .Playing {
-                play()
+            if player.currentItem?.playbackLikelyToKeepUp == true {
+                bufferingState = .Ready
+                if playbackState == .Playing {
+                    play()
+                }
             }
             
         case (.Some(PlayerStatusKey), &PlayerObserverContext):
