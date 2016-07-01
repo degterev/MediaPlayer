@@ -28,7 +28,7 @@ private let PlayerCurrentItemKey = "currentItem"
 
 private let PlayerItemEmptyBufferKey = "currentItem.playbackBufferEmpty"
 private let PlayerItemKeepUp = "currentItem.playbackLikelyToKeepUp"
-private let PlayerItemLoadedTimeRanges = "currentItem.playbackLikelyToKeepUp"
+private let PlayerItemLoadedTimeRanges = "currentItem.loadedTimeRanges"
 
 // Asset loading keys
 
@@ -183,7 +183,7 @@ public class MediaPlayer: NSObject {
             }
         }
     }
-
+    
     public var playerItem: AVPlayerItem? {
         get {
             return player.currentItem
@@ -224,7 +224,7 @@ public class MediaPlayer: NSObject {
         guard !CMTIME_IS_INVALID(currentTime) && isfinite(currentTimeValue) else {
             return 0.0
         }
-
+        
         return currentTimeValue
     }
     
@@ -267,11 +267,12 @@ public class MediaPlayer: NSObject {
             return 0.0
         }
         
-        guard let loadedTimeRange = playerItem.loadedTimeRanges.first else {
-            return 0.0
-        }
+        var loadedDuration: NSTimeInterval = 0.0
         
-        let loadedDuration = loadedTimeRange.CMTimeRangeValue.duration.seconds
+        for loadedTimeRange in playerItem.loadedTimeRanges {
+            
+            loadedDuration += loadedTimeRange.CMTimeRangeValue.duration.seconds
+        }
         
         return Float(loadedDuration / duration)
     }
@@ -340,7 +341,7 @@ public extension MediaPlayer {
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         
         switch (keyPath, context) {
-        
+            
         case (.Some(PlayerCurrentItemKey), &PlayerObserverContext):
             
             if startSecond > 0.0 {
@@ -348,7 +349,7 @@ public extension MediaPlayer {
             }
             
         case (.Some(PlayerRateKey), &PlayerObserverContext):
-
+            
             if bufferingState == .Ready {
                 playbackState = player.rate > 0 ? .Playing : .Paused
             }
@@ -450,7 +451,7 @@ public extension MediaPlayer {
             
             completionHandler?(finished: finished, wasPlaying: wasPlaying)
         }
-
+        
     }
     
     func seekToProgress(progress: Float, shouldAutoPlay: Bool, completionHandler: ((finished: Bool, wasPlaying: Bool) -> Void)? = nil) {
@@ -473,7 +474,7 @@ extension MediaPlayer {
         }
         
         if updateInterval > 0.0 {
-
+            
             periodicTimeObserver = player.addPeriodicTimeObserverForInterval(CMTimeMakeWithSeconds(updateInterval, Int32(NSEC_PER_SEC)), queue: dispatch_get_main_queue()) { [weak self] time in
                 
                 self?.timeObserverFired()
@@ -524,7 +525,7 @@ extension MediaPlayer {
                 let playerItem: AVPlayerItem = AVPlayerItem(asset:asset)
                 strongSelf.setupPlayerItem(playerItem)
             })
-        })
+            })
     }
     
     private func setupPlayerItem(playerItem: AVPlayerItem?) {
@@ -544,7 +545,7 @@ extension MediaPlayer {
         }
         
         setupEndTimeForPlayerItem(playerItem)
-
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MediaPlayer.playerItemDidPlayToEndTime(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: playerItem)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MediaPlayer.playerItemFailedToPlayToEndTime(_:)), name: AVPlayerItemFailedToPlayToEndTimeNotification, object: playerItem)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MediaPlayer.playbackDidStall(_:)), name: AVPlayerItemPlaybackStalledNotification, object: playerItem)
